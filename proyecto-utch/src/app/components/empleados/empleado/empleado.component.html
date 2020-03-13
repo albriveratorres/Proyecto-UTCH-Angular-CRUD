@@ -1,0 +1,58 @@
+<div class="card mt-5">
+    <div class="card-body">
+        <form #empleadoForm="ngForm" (ngSubmit)="onSubmit(empleadoForm)">
+
+            <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="empleadoService.SelectedEmpleado.$key">
+           
+            <div class="form-group">
+                <input
+                    type="text"
+                    class="form-control"
+                    name="nombre"
+                    #nombre="ngModel"
+                    [(ngModel)]="empleadoService.SelectedEmpleado.nombre"
+                    placeholder="Agrega un nombre"
+                    >
+            </div>
+
+            <div class="form-group">
+                <input
+                    type="text"
+                    class="form-control"
+                    name="apellido"
+                    #apellido="ngModel"
+                    [(ngModel)]="empleadoService.SelectedEmpleado.apellido"
+                    placeholder="Agrega un apellido"
+                    >
+            </div>
+
+            <div class="form-group">
+                <input
+                    type="text"
+                    class="form-control"
+                    name="departamento"
+                    #departamento="ngModel"
+                    [(ngModel)]="empleadoService.SelectedEmpleado.departamento"
+                    placeholder="Agrega un departamento"
+                    >
+            </div>
+
+            <div class="form-group">
+                <input
+                    type="text"
+                    class="form-control"
+                    name="sueldo"
+                    #sueldo="ngModel"
+                    [(ngModel)]="empleadoService.SelectedEmpleado.sueldo"
+                    placeholder="Agrega un sueldo"
+                    >
+            </div>
+
+           <div class="form-group">
+               <button class="btn btn-primary" type=" submit">Agregar</button>&nbsp;
+               <button class="btn btn-secondary" type=" reset" (click)="resetForm(empleadoForm)">Limpiar</button>
+           </div>
+
+        </form>
+    </div>
+</div>
